@@ -15,7 +15,7 @@ app.config['JWT_SECRET_KEY'] = 'mysecretpvtkey'
 jwt = JWTManager(app)
 
 
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://superu-sage.vercel.app"}}, supports_credentials=True)
 
 # Simulated in-memory database
 users = []
