@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import Link from 'next/link';
 
 export default function WebScrapingLandingPage() {
   const features = [
@@ -66,7 +67,7 @@ export default function WebScrapingLandingPage() {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  Get Started 
+                <Link href='/auth/signup'>Sign Up</Link>
                   <ArrowRightIcon className="ml-2 w-5 h-5" />
                 </Button>
               </TooltipTrigger>
@@ -81,7 +82,7 @@ export default function WebScrapingLandingPage() {
             size="lg" 
             className="border-gray-300 hover:bg-gray-100"
           >
-            Watch Demo
+           <Link href='/auth/signin'>Log In</Link>
           </Button>
         </div>
 
