@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children }) {
     if (!token) {
       router.push('/auth/signin');
     } else {
-      fetch('http://127.0.0.1:5000/verify', {
+      fetch('https://vaibhxv.pythonanywhere.com/verify', {
         headers: { Authorization: `Bearer ${token}` },
       }).then((res) => {
         if (res.ok) {

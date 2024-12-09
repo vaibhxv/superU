@@ -48,7 +48,7 @@ export default function WorkspacePage() {
     setError(null);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/scrape', { url: currentUrl });
+      const response = await axios.post('https://vaibhxv.pythonanywhere.com/scrape', { url: currentUrl });
       const scrapedData: ScrapedContent = response.data;
 
       // Merge new content with existing
@@ -91,7 +91,7 @@ export default function WorkspacePage() {
 
   const createTeam = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/create_team', {
+      const response = await fetch('https://vaibhxv.pythonanywhere.com/create_team', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export default function WorkspacePage() {
         setIsCreateModalOpen(false);
   
         // Fetch the created team details
-        const teamResponse = await fetch(`http://127.0.0.1:5000/team/${teamId}`, {
+        const teamResponse = await fetch(`https://vaibhxv.pythonanywhere.com/team/${teamId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -126,7 +126,7 @@ export default function WorkspacePage() {
 
   const fetchAvailableTeams = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/teams/all", {
+      const response = await fetch("https://vaibhxv.pythonanywhere.com/teams/all", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -158,7 +158,7 @@ export default function WorkspacePage() {
     }
   
     try {
-      const response = await fetch("http://127.0.0.1:5000/join_team", {
+      const response = await fetch("https://vaibhxv.pythonanywhere.com/join_team", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -176,7 +176,7 @@ export default function WorkspacePage() {
         setSelectedTeamId(null);
   
         // Fetch the updated team details after joining
-        const teamResponse = await fetch(`http://127.0.0.1:5000/team/${selectedTeamId}`, {
+        const teamResponse = await fetch(`https://vaibhxv.pythonanywhere.com/team/${selectedTeamId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

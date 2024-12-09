@@ -15,7 +15,7 @@ app.config['JWT_SECRET_KEY'] = 'mysecretpvtkey'
 jwt = JWTManager(app)
 
 
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app)
 
 # Simulated in-memory database
 users = []
